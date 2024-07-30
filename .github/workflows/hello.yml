@@ -1,0 +1,10 @@
+name: SayHello
+on:
+  workflow_dispatch: {}
+jobs:
+  hello:
+    name: SayHello
+    runs-on: linux-arm64
+    steps:
+      - name: SayHello
+        run: echo hello
