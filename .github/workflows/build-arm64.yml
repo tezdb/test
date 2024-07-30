@@ -6,6 +6,8 @@ jobs:
     name: BuildArm64
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
       - name: BuildArm64
         run: |
           export DOCKER_CLI_EXPERIMENTAL=enabled
