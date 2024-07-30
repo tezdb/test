@@ -1,0 +1,14 @@
+name: BuildArm64
+on:
+  workflow_dispatch: {}
+jobs:
+  build:
+    name: BuildArm64
+    runs-on: ubuntu-latest
+    steps:
+      - name: BuildArm64
+        run: |
+          export DOCKER_CLI_EXPERIMENTAL=enabled
+          docker buildx create --use --name multi-arch-builder
+          docker buildx build --platform=linux/arm64 .
+          
